@@ -1,6 +1,3 @@
 
-VS Code will automatically .json` (or `packa
+VS Code 
 
-If y
-## Tradem
-trademarks or logos is subject to and m
