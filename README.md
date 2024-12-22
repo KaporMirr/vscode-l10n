@@ -1,65 +1,23 @@
-# Localization tooling for Visual Studio Code
 
-This repository contains tooling for localizing Visual Studio Code extensions. Localization for VS Code extension's source code has 4 important parts:
 
-* [`vscode.l10n.t`](#vscodel10nt) - The API for translating strings in your extension's code
-* [`@vscode/l10n-dev`](#vscodel10n-dev) - The tooling used for extracting l10n strings from vscode extensions and working with XLF files
-* [`@vscode/l10n`](#vscodel10n) - The library used for loading the translations into subprocesses of your extension
-* [`package.nls.json`](#packagenlsjson) - The file used for translating static contributions in your extension's `package.json`
 
-Additionally, for a sample of how to use these tools, see the [l10n-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/l10n-sample) in the vscode-extension-samples repo.
 
-## `vscode.l10n.t`
-
-This API, introduced in VS Code 1.73, is used for translating strings in your extension's code. It is a part of the main VS Code extension API and is further documented [here](https://code.visualstudio.com/api/references/vscode-api#l10n).
-
-> **Note**
+* [`vscode.l10n.t`](#vscodel10nt) - The API for translating strings in your exten
+* [`@vscode/l10n`](#vscodel10n) - The library used for loading the translations 
 >
-> Make sure you your VS Code engine and `@types/vscode` version in your extension manifest is at least `^1.73.0`.
+> Make sure you your VS Code engine and `@types/vsc in your extension manifest is at least
 
-## `@vscode/l10n-dev`
-
-Tooling used for extracting `l10n` strings from vscode extensions and working with XLF files. See it's dedicated [README](./l10n-dev) for usage instructions.
-
-## `@vscode/l10n`
-
-Library used for loading the translations into subprocesses of your extension. See it's dedicated [README](./l10n) for usage instructions.
-
-> **Note**
->
-> You should _NOT_ use this library in your extension's main process. The translations are loaded into the main process by VS Code itself.
-
-## `package.nls.json`
-
-This file, along with `package.nls.{locale}.json` files, are used for translating static contributions in your extension's `package.json`. Here's an example:
-
-Your `./package.json`:
-
-```jsonc
-{
-  "name": "my-extension",
-  "version": "0.0.1",
-  "main": "./out/extension.js",
-  "l10n": "./l10n",
-  //...
-  "contributes": {
-    "commands": [
-      {
-        "command": "my-extension.helloWorld",
-        // The key is surrounded by % characters
-        "title": "%my-extension.helloWorld.title%"
-      }
-    ]
-  }
-}
+> **
+  "version"",
+  "main": "./ % charact
 ```
 
-Your `./package.nls.json`:
+Your `./package.nls.`:
 
 ```jsonc
 {
-  // That same key from the package.json
-  "my-extension.helloWorld.title": "Hello World"
+  // That same key from the package
+  "my.helloWorld.": "Hello"
 }
 ```
 
